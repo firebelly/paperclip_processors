@@ -28,7 +28,7 @@ You may specify custom values for the following options (or just leave the defau
 Here's an example of over-riding all default options
 
 
-class User < ActiveRecord::Base
+  class User < ActiveRecord::Base
     has_attached_file :avatar, :styles => { :medium => {:geometry=>"300x300>",
  	:background=>"#d6e6e6",
 	:border=>"4x4",
