@@ -1,7 +1,7 @@
 =Paperclip
 
 This is a custom post-processor for the paperclip[http://github.com/thoughtbot/paperclip/tree/master] plugin. It provides a similar effect
-to imagemagick's built-in -polaroid[http://www.tipstrs.com/tip/743/Creating-thumbnails-in-Imagemagick] effect.
+to imagemagick's built-in -polaroid[http://www.tipstrs.com/tip/743/Creating-thumbnails-in-Imagemagick] effect. 
 
 ==Quick Start
 
@@ -30,10 +30,12 @@ Here's an example of over-riding all default options
 
 class User < ActiveRecord::Base
     has_attached_file :avatar, :styles => { :medium => {:geometry=>"300x300>",
- 														:background=>"#d6e6e6",
-														:border=>"4x4",
-														:border_color=>"#d5dada",
-														:shadow_color=>"#000000",
-														:shadow_offsets=>"65x3+2+2"},
-							   				:processors => [:thumbnail, :polaroid]
+ 	:background=>"#d6e6e6",
+	:border=>"4x4",
+	:border_color=>"#d5dada",
+	:shadow_color=>"#000000",
+	:shadow_offsets=>"65x3+2+2"},
+	:processors => [:thumbnail, :polaroid]
   end
+
+Note: Requires ImageMagick 6.4.x or higher because it relies on the -layers "merge" command option
