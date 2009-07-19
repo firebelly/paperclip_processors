@@ -12,7 +12,8 @@ module Paperclip
         :rotation => rand(10) - 5,
         :border_color => "#e0e0e0",
         :border => "8x8",
-        :background => "#ffffff"
+        :background => "#ffffff",
+        :polaroid => true
       }
       @options = defaults.merge(options)
       @current_format   = File.extname(@file.path)
@@ -20,6 +21,8 @@ module Paperclip
     end
 
     def make  
+      return @file unless options[:polaroid] == true
+
       src = @file
       dst = Tempfile.new([@basename, @format].compact.join("."))
       dst.binmode
