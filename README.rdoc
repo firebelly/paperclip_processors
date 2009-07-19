@@ -15,7 +15,7 @@ In your model:
   end
 
 The post-processor will by default transform <em>all</em> of your thumbnail sizes using the polaroid effect.  To only transform
-certain styles, pass the <tt>:polaroid => false</tt> option in an options hash for a particular style:
+certain styles, pass an options hash for a particular style:
 
   class User < ActiveRecord::Base
     has_attached_file :avatar,
